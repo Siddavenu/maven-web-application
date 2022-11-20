@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 tools{
-maven 'maven3.8.2'
+maven 'Test1'
 
 }
 
@@ -42,15 +42,18 @@ stages{
   sh  "mvn clean deploy"
   }
   }
-  
+  */
   stage('DeployAppIntoTomcat'){
   steps{
-  sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
+sshagent(['71c9efb4-6a5e-4281-9f48-270d4e222183']) {
+    // some block
+}
+	  {
    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.190.162:/opt/apache-tomcat-9.0.50/webapps/"    
   }
   }
   }
-  */
+  
 }//Stages Closing
 
 post{
