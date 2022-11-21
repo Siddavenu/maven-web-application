@@ -6,11 +6,11 @@ tools{
 maven 'Test1'
 
 }
-/*
+
 triggers{
 pollSCM('* * * * *')
 }
-*/
+
 options{
 timestamps()
 buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
@@ -20,7 +20,7 @@ stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'qa', credentialsId: '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', url: 'https://github.com/Siddavenu/maven-web-application.git'
+    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
 	
 	}
   }
@@ -42,7 +42,7 @@ stages{
   sh  "mvn clean deploy"
   }
   }
-  */
+  
   stage('DeployAppIntoTomcat'){
   steps{
        sshagent(['71c9efb4-6a5e-4281-9f48-270d4e222183']) {
@@ -50,7 +50,7 @@ stages{
   }
   }
   }
-  
+  */
 }//Stages Closing
 /*
 post{
