@@ -42,7 +42,7 @@ stages{
   sh  "mvn clean deploy"
   }
   }
-  */
+  
   stage('DeployAppIntoTomcat'){
   steps{
        sshagent(['71c9efb4-6a5e-4281-9f48-270d4e222183']) {
@@ -50,8 +50,10 @@ stages{
   }
   }
   }
-  
+  */
 }//Stages Closing
+
+
 /*
 post{
 
