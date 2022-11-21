@@ -6,7 +6,7 @@ tools{
 maven 'Test1'
 
 }
-
+/*
 triggers{
 pollSCM('* * * * *')
 }
@@ -15,12 +15,12 @@ options{
 timestamps()
 buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
 }
-
+*/
 stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+    git branch: 'master', credentialsId: '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', url: 'https://github.com/Siddavenu/maven-web-application.git'
 	
 	}
   }
@@ -52,7 +52,7 @@ stages{
   }
   
 }//Stages Closing
-
+/*
 post{
 
  success{
@@ -70,6 +70,6 @@ post{
  }
  
 }
-
+*/
 
 }//Pipeline closing
